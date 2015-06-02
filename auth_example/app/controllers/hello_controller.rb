@@ -1,6 +1,5 @@
 #
-class HelloController <ApiController
-
+class HelloController < ApiController
   DATA = [{ hello: 'world' }, { hello: 'joe' }]
 
   def index
@@ -11,7 +10,7 @@ class HelloController <ApiController
     if (iid = params[:id].to_i) == 0
       render json: { greeting: "Hello, #{current_user.email}"}
     elsif iid.between? 1, DATA.length
-      render json: DATA[iid -1]
+      render json: DATA[iid - 1]
     else
       head :no_content
     end
