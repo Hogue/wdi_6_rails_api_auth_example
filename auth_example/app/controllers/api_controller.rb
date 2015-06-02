@@ -1,6 +1,7 @@
 # Everything except AuthController should inherit from this
 class ApiController < ApplicationController
-  before_action :authenticate
+
+  before_action :authenticate, except: [:index, :show]
 
   private
 
